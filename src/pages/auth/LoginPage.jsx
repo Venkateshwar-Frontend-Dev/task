@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { message, Card, Checkbox, Form } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import BeforeAuthLayout from "../../layout/BeforeAuthLayout";
 import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import BeforeAuthLayout from "../../layout/BeforeAuthLayout";
 import CustomInputItem from "../../components/input/CustomInputItem";
 import { EMAIL_RULE, PASSWORD_RULE } from "../../staticText/ErrorText";
 import CustomBtn from "../../components/button/CustomBtn";
 import { loginUser } from "../../store/action/authActions";
+import CustomHelmet from "../../util/CustomHelmet";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -16,14 +17,15 @@ const LoginPage = () => {
     dispatch(loginUser(values));
   };
 
-   useEffect(() => {
+  useEffect(() => {
     if (error) {
       message.error(error);
     }
   }, [error]);
   return (
     <BeforeAuthLayout>
-      <Card style={{ width: 400 }}>
+      <CustomHelmet title="Login" />
+      <Card style={{ maxWidth: 400 }}>
         <Form
           name="login"
           initialValues={{ remember: true }}

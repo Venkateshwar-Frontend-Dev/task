@@ -13,6 +13,31 @@ code {
     monospace;
 }
 
+.header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  padding: 0 30px;
+}
+
+.content {
+  padding: 30px;
+  min-height: "calc(100vh - 64px)";
+  margin-top: 64px;
+}
+
+.content-inner {
+  padding: 24px;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
 .user-card-action-icons {
   width: 100%;
   height: 100%;
@@ -34,4 +59,19 @@ code {
 .action-modal .ant-modal-header {
   border-bottom: 1px solid #d9d9d9;
   padding-bottom: 15px;
+}
+
+/* mobile */
+@media (max-width: 487px) {
+  .header {
+    padding: 0 10px;
+  }
+
+  .content {
+    padding: 10px;
+  }
+
+  .content-inner {
+    padding: 10px;
+  }
 }

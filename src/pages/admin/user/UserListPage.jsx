@@ -13,6 +13,7 @@ import { getUserList } from "../../../store/action/userAction";
 import UserDeleteModel from "./components/UserDeleteModel";
 import CustomPagination from "../../../components/pagination/CustomPagination";
 import usePagination from "../../../hooks/usePagination";
+import CustomHelmet from "../../../util/CustomHelmet";
 
 const { Title } = Typography;
 
@@ -109,14 +110,8 @@ const UserListPage = () => {
 
   return (
     <AfterAuthLayout>
-      <div
-        style={{
-          padding: 24,
-          background: "#fff",
-          borderRadius: 10,
-          marginBottom: 15,
-        }}
-      >
+      <CustomHelmet title="User List" />
+      <div className="content-inner">
         <Flex gap="middle" align="center" justify="space-between" wrap="wrap">
           <Title level={5} style={{ margin: 0 }}>
             Users
